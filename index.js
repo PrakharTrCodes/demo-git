@@ -16,4 +16,5 @@ import Login from './Login'
 import Register from './Register'
 import Student from './Student'
 import PracticeHooks from './PracticeHooks'
+
 AppRegistry.registerComponent(appName, () => Navigation);

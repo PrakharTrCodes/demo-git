@@ -10,14 +10,12 @@ export default function DetailsScreen(prop) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
-      <Text>hiiii</Text>
       <Button
         title="Go to Details... again"
         onPress={() => prop.navigation.push('Details')}
       />
       <Button title="Go to Home" onPress={() => prop.navigation.navigate('Home', {id : "Home"})} />
       <Button title="Go back" onPress={() => prop.navigation.goBack()} />
-      <Button title="Go back by pop" onPress={() => prop.navigation.pop()} />
     </View>
   );
 }
