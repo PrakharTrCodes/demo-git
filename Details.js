@@ -10,6 +10,7 @@ export default function DetailsScreen(prop) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
+      <Text>hiiii</Text>
       <Button
         title="Go to Details... again"
         onPress={() => prop.navigation.push('Details')}
