@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert, ScrollView } from 'react-native'
 import React from 'react';
 import RNPasswordStrengthMeter, {
     TextPasswordStrengthDisplay,
@@ -35,7 +35,7 @@ const App = () => {
 
     return (
 
-        <View style={styles.main}>
+        <ScrollView style={styles.main}>
 
             <Image style={styles.bgImage} source={require('./src/assets/icLoginBg_2022-03-24/icLoginBg.png')} />
             <Text style={styles.loginBadge}>{'Register'}</Text>
@@ -115,7 +115,7 @@ const App = () => {
                     </Text>
                 </View>
             </View>
-        </View>
+        </ScrollView>
 
     )
 }
@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
         paddingLeft: 30,
     },
     bgImage: {
+        bottom: 38,
         width: '100%',
         height: '30%'
     },

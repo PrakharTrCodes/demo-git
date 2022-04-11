@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React from 'react';
 
-const App = ({navigation}) => {
+const App = ({navigation, route}) => {
     const [mail, setMail] = useState('');
     const [pass, setPass] = useState('');
     const [showPass, setShowPass] = useState(true);
@@ -20,6 +20,7 @@ const App = ({navigation}) => {
     }
 
     return (
+        
             <View style={styles.main}>
 
                 <Image style={styles.bgImage} source={require('./src/assets/icLoginBg_2022-03-24/icLoginBg.png')} />
@@ -55,14 +56,14 @@ const App = ({navigation}) => {
                             {'Forgot Password ?'}
                         </Text>
                     </View>
-                    <TouchableOpacity onPress={() => { validate() ? Alert.alert('Logged in') : Alert.alert('Invalid Credentials') }}>
+                    <TouchableOpacity onPress={() => { validate() ? route.params.setisSignedIn(true) : Alert.alert('Invalid Credentials') }}>
                         <View style={styles.loginBt}>
                             <Text style={{ fontWeight: '700' }}>{'LOGIN'}</Text>
                         </View>
 
                     </TouchableOpacity>
                 </View>
-                <View style={{ alignItems: 'center' }}>
+                <View style={{ alignItems: 'center' , bottom: 20}}>
                     <Text>{'Not yet Registered?'}<Text 
                     onPress={()=>{navigation.navigate('Register')}}
                     style={{ fontWeight: 'bold' }}>{' Register here'}</Text></Text>
@@ -74,17 +75,20 @@ const App = ({navigation}) => {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        paddingVertical: 40,
+        paddingVertical: 35,
         paddingHorizontal: 30,
     },
     bgImage: {
+        bottom: 38,
+        left:28,
         width: '100%',
         height: '30%'
     },
     loginBadge: {
         bottom: 30,
         fontSize: 30,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        // fontFamily: 'Roboto',
     },
     lgnTxt: {
         bottom: 30,
